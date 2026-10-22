@@ -14,6 +14,6 @@ u = np.sqrt
 
 model = ResourceExtraction(h, u, delta, xmin=0, xmax=xmax, ngrid=1000).solve()
 
-model.plot_path(x0=[0.35,0.48], T=15)
+model.plot_path(x0=[0.35,0.5], T=15)
 model.plot_policy()
 plt.show()

@@ -20,7 +20,7 @@ model.plot_path(x0=0.9, T=10)
 model.plot_policy()
 ```
 
-See `logistic_growth.py` and `shallowlake.py` for the two original examples.
+See `logistic_growth.py` and `shallowlake.py` for the two original examples. `allee_fishery.py` adds a fishery with an Allee effect: below a tipping point it is optimal to fish the stock out.
 
 ## Constructor
 

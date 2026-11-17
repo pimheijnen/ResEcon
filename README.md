@@ -1,5 +1,7 @@
 # resecon: optimal extraction of a renewable resource
 
+[![tests](https://github.com/pimheijnen/ResEcon/actions/workflows/tests.yml/badge.svg)](https://github.com/pimheijnen/ResEcon/actions/workflows/tests.yml)
+
 `resecon` solves the textbook problem of renewable resource economics. A
 planner owns a stock of a renewable resource (fish, forest, groundwater,
 a clean lake) that grows naturally. In each period the planner decides how much

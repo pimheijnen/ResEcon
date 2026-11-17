@@ -15,7 +15,7 @@ tipping point, multiple steady states, and policies that jump.
 
 ## Installation
 
-`resecon` needs Python 3.9 or newer, with `numpy` and `matplotlib`. They are
+`resecon` needs Python 3.10 or newer, with `numpy` and `matplotlib`. They are
 installed automatically. Install the package straight from GitHub with
 
 ```bash

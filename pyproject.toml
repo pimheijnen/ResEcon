@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "resecon"
+version = "0.1.0"
+description = "Optimal extraction of a renewable resource, solved by value function iteration"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Pim Heijnen" }]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.22",
+    "matplotlib>=3.5",
+]
+keywords = [
+    "resource economics",
+    "renewable resources",
+    "optimal control",
+    "dynamic programming",
+    "value function iteration",
+    "fisheries",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/pimheijnen/ResEcon"
+Source = "https://github.com/pimheijnen/ResEcon"
+Issues = "https://github.com/pimheijnen/ResEcon/issues"
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "examples", "README.md", "LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

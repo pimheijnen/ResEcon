@@ -5,7 +5,8 @@ The Bellman equation is
 
     V(x_t) = max_{0 <= x_{t+1} <= h(x_t) + x_t}  u(h(x_t) + x_t - x_{t+1}) + delta * V(x_{t+1})
 
-and is solved by value function iteration on a grid. Python port of resecon.m.
+and is solved by value function iteration on a grid. See the README for the
+assumptions behind this formulation and the limitations of the method.
 """
 
 import warnings
@@ -116,7 +117,12 @@ class ResourceExtraction:
         U = self._utility_matrix()
         V = U.max(axis=1) / (1 - self.delta)
         if np.any(np.isinf(V)):
-            raise RuntimeError("no feasible actions")
+            bad = self.xgrid[np.isinf(V)]
+            raise RuntimeError(
+                f"no choice gives finite utility at stock level(s) {bad[:5]}"
+                f"{' ...' if bad.size > 5 else ''}. This happens, for example, "
+                "with u = log and xmin = 0, where only zero consumption is "
+                "feasible at x = 0; choose xmin > 0 instead.")
 
         for it in range(1, self.max_iter + 1):
             W = V
